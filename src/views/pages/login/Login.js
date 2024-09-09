@@ -88,11 +88,6 @@ const Login = () => {
                           {loading ? <CSpinner size="sm" /> : 'Se connecter'}
                         </CButton>
                       </CCol>
-                      <CCol xs={6}>
-                        <CButton color="link" className="px-0">
-                          ou S'inscrire !
-                        </CButton>
-                      </CCol>
                     </CRow>
                   </CForm>
                 </CCardBody>
