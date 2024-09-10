@@ -38,7 +38,8 @@ const Login = () => {
       })
       if (response.status === 200) {
         localStorage.setItem('generateTokken', response.data.token)
-        navigate('/dashboard')
+        navigate('/offre/liste')
+        window.location.reload()
       }
     } catch (err) {
       setError('Authentification échoué!')

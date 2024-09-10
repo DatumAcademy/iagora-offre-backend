@@ -12,7 +12,8 @@ import {
   cilPuzzle,
   cilSpeedometer,
   cilStar,
-  cilPlus
+  cilPlus,
+  cilChart
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
@@ -48,6 +49,16 @@ const _nav = [
     name: 'Création d\'un Admin',
     to: '/admin/creation',
     icon: <CIcon icon={cilPlus} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavTitle,
+    name: 'Tableau de bord',
+  },
+  {
+    component: CNavItem,
+    name: 'Statistique',
+    to: '/offre/statistique',
+    icon: <CIcon icon={cilChart} customClassName="nav-icon" />,
   },
   {
     component: CNavTitle,

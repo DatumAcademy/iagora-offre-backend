@@ -53,6 +53,7 @@ const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 const ListeOffre = React.lazy(() => import('./views/offres/liste/Liste'))
 const creationOffre = React.lazy(() => import('./views/offres/Add/Creation'))
 const detailOffre = React.lazy(() => import('./views/offres/Detail/Detail'))
+const statistique = React.lazy(() => import('./views/statistique/dashboard'))
 
 // Admin
 const ListeAdmin = React.lazy(() => import('./views/admin/liste/Liste'))
@@ -69,6 +70,7 @@ const routes = [
   { path: '/admin/liste', name: 'Liste des Administrateurs', element: ListeAdmin },
   { path: '/admin/creation', name: 'Création d\'un Administrateur', element: creationAdmin },
   { path: '/admin/detail/:id', name: 'A propos de l\'administrateur', element: detailAdmin },
+  { path: '/offre/statistique', name: 'Tableau de bord', element: statistique },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },
