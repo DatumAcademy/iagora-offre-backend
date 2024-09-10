@@ -18,6 +18,7 @@ import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
 import axios from 'axios'
 import { API_URL } from '../../../constants/constant'
+import logoIG from '../../../../src/assets/images/logo.png'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -95,9 +96,13 @@ const Login = () => {
               </CCard>
               <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
                 <CCardBody className="text-center">
-                  
+                <img
+                  src={logoIG}
+                  alt="Logo"
+                  style={{ width: '100%', height: '100%'}}
+                />
                 </CCardBody>
-              </CCard>
+              </CCard>  
             </CCardGroup>
           </CCol>
         </CRow>
