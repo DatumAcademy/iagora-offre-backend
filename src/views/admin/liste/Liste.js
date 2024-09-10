@@ -146,7 +146,9 @@ const ListeAdmin = () => {
                 <CTableBody>
                   {admins.map((admin) => (
                     <CTableRow key={admin._id}>
-                      <CTableDataCell>{admin.first_name}</CTableDataCell>
+                      <CTableDataCell scope="row">
+                        <Link to={`/admin/detail/${admin._id}`} name="A propos de l\'offre">{admin.first_name}</Link>
+                      </CTableDataCell>
                       <CTableDataCell>{admin.last_name}</CTableDataCell>
                       <CTableDataCell>{admin.email}</CTableDataCell>
                     </CTableRow>
