@@ -82,7 +82,7 @@ const CreateOffer = () => {
     try {
       const response = await axios.post(`${API_URL}/create`, offerBody)
       if (response.status === 201) {
-        setMessage('Offre créée avec succès!')
+        alert('Offre créée avec succès!')
       }
     } catch (error) {
       console.error('Erreur lors de la création de l\'offre', error)
@@ -96,7 +96,7 @@ const CreateOffer = () => {
     <CRow>
     <CCol md={12}>
         <CCard className="mb-4">
-        <CCardHeader>
+        <CCardHeader  className="text-center">
             <strong>CREATION D'UNE OFFRE</strong>
         </CCardHeader>
         <CCardBody>

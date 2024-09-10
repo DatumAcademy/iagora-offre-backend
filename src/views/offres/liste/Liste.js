@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import {
   CCard,
   CCardBody,
@@ -90,7 +91,7 @@ const ListeOffre = () => {
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
-          <CCardHeader>
+          <CCardHeader  className="text-center">
             <strong>LISTE DES OFFRES DISPONIBLES</strong>
           </CCardHeader>
           <CCardBody>
@@ -152,7 +153,9 @@ const ListeOffre = () => {
                 <CTableBody>
                   {offers.map((offer) => (
                     <CTableRow key={offer.id}>
-                      <CTableHeaderCell>{offer.label}</CTableHeaderCell>
+                      <CTableHeaderCell scope="row">
+                        <Link to={`/offre/detail/${offer.id}`} name="A propos de l\'offre">{offer.label}</Link>
+                      </CTableHeaderCell>
                       <CTableDataCell>{offer.company}</CTableDataCell>
                       <CTableDataCell>{offer.contract}</CTableDataCell>
                       <CTableDataCell>{offer.type}</CTableDataCell>
