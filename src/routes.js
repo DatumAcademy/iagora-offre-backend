@@ -51,12 +51,14 @@ const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 
 // Offres
 const ListeOffre = React.lazy(() => import('./views/offres/liste/Liste'))
+const creationOffre = React.lazy(() => import('./views/offres/Add/Creation'))
 
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/offre/liste', name: 'Liste des offres', element: ListeOffre },
+  { path: '/offre/creation', name: 'Création d\'une offre', element: creationOffre },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },

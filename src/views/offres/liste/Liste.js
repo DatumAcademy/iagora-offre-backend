@@ -23,7 +23,7 @@ import {
 import { API_URL } from '../../../constants/constant'
 import PaginationComponent from '../../base/paginations/PaginationPerso'
 
-const Tables = () => {
+const ListeOffre = () => {
   const [offers, setOffers] = useState([])
   const [filters, setFilters] = useState({
     type: '',
@@ -176,4 +176,4 @@ const Tables = () => {
   )
 }
 
-export default Tables
+export default ListeOffre
