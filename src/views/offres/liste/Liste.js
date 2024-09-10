@@ -28,7 +28,7 @@ const ListeOffre = () => {
   const [filters, setFilters] = useState({
     type: '',
     skills: '',
-    city: '',
+    label: '',
     contract: '',
     minexperience: '',
     language: '',
@@ -42,7 +42,7 @@ const ListeOffre = () => {
     totalResults: 0
   })
 
-  const fetchOffers = async (page = 1) => {
+  const fetchOffers = async (page = 0) => {
     setLoading(true)
     try {
       const response = await axios.get(`${API_URL}/search`, {
@@ -108,7 +108,7 @@ const ListeOffre = () => {
                     <CFormInput name="skills" placeholder="Compétences" value={filters.skills} onChange={handleInputChange} />
                 </CCol>
                 <CCol md={3}>
-                    <CFormInput name="city" placeholder="Ville" value={filters.city} onChange={handleInputChange} />
+                    <CFormInput name="label" placeholder="Titre de l\'offre" value={filters.label} onChange={handleInputChange} />
                 </CCol>
                 <CCol md={3}>
                     <CFormSelect

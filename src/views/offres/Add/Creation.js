@@ -103,7 +103,7 @@ const CreateOffer = () => {
             <CForm onSubmit={handleSubmit}>
             <CInputGroup className="mb-3">
                 <CInputGroupText>Type d'offre</CInputGroupText>
-                <CFormSelect name="type" value={offerData.type} onChange={handleInputChange}>
+                <CFormSelect name="type" value={offerData.type} onChange={handleInputChange} required>
                 <option value="">Sélectionner</option>
                 <option value="Stage">Stage</option>
                 <option value="Emplois">Emploi</option>
@@ -116,6 +116,7 @@ const CreateOffer = () => {
                 type="text"
                 placeholder="Libellé"
                 name="label"
+                required
                 value={offerData.label}
                 onChange={handleInputChange}
                 />
@@ -125,6 +126,7 @@ const CreateOffer = () => {
                 <CInputGroupText>Entreprise</CInputGroupText>
                 <CFormInput
                 type="text"
+                required
                 placeholder="Nom de l'entreprise"
                 name="company"
                 value={offerData.company}
@@ -137,6 +139,7 @@ const CreateOffer = () => {
                 <CFormTextarea
                 placeholder="Courte description de l'offre"
                 name="shortdescription"
+                required
                 value={offerData.shortdescription}
                 onChange={handleInputChange}
                 />
@@ -146,6 +149,7 @@ const CreateOffer = () => {
                 <CInputGroupText>Compétences</CInputGroupText>
                 <CFormInput
                 type="text"
+                required
                 placeholder="Compétences (séparées par des virgules)"
                 name="skills"
                 value={offerData.skills}
@@ -155,7 +159,7 @@ const CreateOffer = () => {
 
             <CInputGroup className="mb-3">
                 <CInputGroupText>Contrat</CInputGroupText>
-                <CFormSelect name="contract" value={offerData.contract} onChange={handleInputChange}>
+                <CFormSelect name="contract" value={offerData.contract} onChange={handleInputChange} required>
                 <option value="">Sélectionner</option>
                 <option value="CDD">CDD</option>
                 <option value="CDI">CDI</option>
@@ -165,7 +169,7 @@ const CreateOffer = () => {
 
             <CInputGroup className="mb-3">
                 <CInputGroupText>Type de Travail</CInputGroupText>
-                <CFormSelect name="typeWork" value={offerData.typeWork} onChange={handleInputChange}>
+                <CFormSelect name="typeWork" value={offerData.typeWork} onChange={handleInputChange} required>
                 <option value="">Sélectionner</option>
                 <option value="Sur Site">Sur Site</option>
                 <option value="A Distance">A Distance</option>
@@ -176,6 +180,7 @@ const CreateOffer = () => {
                 <CInputGroupText>Ville</CInputGroupText>
                 <CFormInput
                 type="text"
+                required
                 placeholder="Ville"
                 name="city"
                 value={offerData.city}
@@ -187,6 +192,7 @@ const CreateOffer = () => {
                 <CInputGroupText>Date Limite</CInputGroupText>
                 <CFormInput
                 type="date"
+                required
                 name="deadlinedate"
                 value={offerData.deadlinedate}
                 onChange={handleInputChange}
@@ -197,6 +203,7 @@ const CreateOffer = () => {
                 <CInputGroupText>Années d'expérience minimum</CInputGroupText>
                 <CFormInput
                 type="number"
+                required
                 name="minexperience"
                 value={offerData.minexperience}
                 onChange={handleInputChange}
@@ -207,6 +214,7 @@ const CreateOffer = () => {
                 <CInputGroupText>Langue</CInputGroupText>
                 <CFormInput
                 type="text"
+                required
                 placeholder="Label de la langue"
                 name="label"
                 value={offerData.language.label}
@@ -216,21 +224,19 @@ const CreateOffer = () => {
 
             <CInputGroup className="mb-3">
                 <CInputGroupText>Niveau</CInputGroupText>
-                <CFormSelect name="level" value={offerData.language.level} onChange={handleLanguageChange}>
+                <CFormSelect name="level" value={offerData.language.level} onChange={handleLanguageChange} required>
                 <option value="">Sélectionner</option>
                 <option value="Moyen">Moyen</option>
                 <option value="Intermédiaire">Intermédiaire</option>
                 <option value="Avancé">Avancé</option>
                 </CFormSelect>
             </CInputGroup>
-
+            {message && <p style={{ color: 'success' }}>{message}</p>}
             <div className="d-grid">
                 <CButton color="primary" type="submit" disabled={loading}>
                 {loading ? 'Création en cours...' : 'Créer l\'offre'}
                 </CButton>
             </div>
-
-            {message && <p>{message}</p>}
             </CForm>
         </CCardBody>
         </CCard>
