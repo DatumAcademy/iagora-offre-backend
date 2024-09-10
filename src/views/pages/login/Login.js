@@ -37,7 +37,7 @@ const Login = () => {
         password,
       })
       if (response.status === 200) {
-        localStorage.setItem('JWTokken', response.data.token)
+        localStorage.setItem('generateTokken', response.data.token)
         navigate('/dashboard')
       }
     } catch (err) {

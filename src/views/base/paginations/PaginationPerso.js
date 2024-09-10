@@ -1,5 +1,6 @@
 import React from 'react'
 import { CPagination, CPaginationItem } from '@coreui/react'
+
 const PaginationComponent = ({ currentPage, totalPages, onPageChange }) => {
   const maxPagesToShow = 10
   const pages = []
@@ -16,8 +17,8 @@ const PaginationComponent = ({ currentPage, totalPages, onPageChange }) => {
     pages.push(
       <CPaginationItem
         key={i}
-        active={i === currentPage}
-        onClick={() => onPageChange(i)}
+        active={i === currentPage + 1}
+        onClick={() => onPageChange(i - 1)}
       >
         {i}
       </CPaginationItem>,
@@ -26,7 +27,7 @@ const PaginationComponent = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <CPagination className="justify-content-center" aria-label="Page navigation">
-      {currentPage > 1 && (
+      {currentPage > 0 && (
         <CPaginationItem onClick={() => onPageChange(currentPage - 1)}>
           Précédent
         </CPaginationItem>
@@ -34,7 +35,7 @@ const PaginationComponent = ({ currentPage, totalPages, onPageChange }) => {
 
       {startPage > 1 && (
         <>
-          <CPaginationItem onClick={() => onPageChange(1)}>1</CPaginationItem>
+          <CPaginationItem onClick={() => onPageChange(0)}>1</CPaginationItem>
           <CPaginationItem disabled>...</CPaginationItem>
         </>
       )}
@@ -44,13 +45,13 @@ const PaginationComponent = ({ currentPage, totalPages, onPageChange }) => {
       {endPage < totalPages && (
         <>
           <CPaginationItem disabled>...</CPaginationItem>
-          <CPaginationItem onClick={() => onPageChange(totalPages)}>
+          <CPaginationItem onClick={() => onPageChange(totalPages - 1)}>
             {totalPages}
           </CPaginationItem>
         </>
       )}
 
-      {currentPage < totalPages && (
+      {currentPage + 1 < totalPages && (
         <CPaginationItem onClick={() => onPageChange(currentPage + 1)}>
           Suivant
         </CPaginationItem>

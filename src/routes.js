@@ -54,6 +54,10 @@ const ListeOffre = React.lazy(() => import('./views/offres/liste/Liste'))
 const creationOffre = React.lazy(() => import('./views/offres/Add/Creation'))
 const detailOffre = React.lazy(() => import('./views/offres/Detail/Detail'))
 
+// Admin
+const ListeAdmin = React.lazy(() => import('./views/admin/liste/Liste'))
+//const creationAdmin = React.lazy(() => import('./views/admin/Add/Creation'))
+
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
 const routes = [
@@ -61,6 +65,8 @@ const routes = [
   { path: '/offre/liste', name: 'Liste des offres', element: ListeOffre },
   { path: '/offre/creation', name: 'Création d\'une offre', element: creationOffre },
   { path: '/offre/detail/:id', name: 'A propos de l\'offre', element: detailOffre },
+  { path: '/admin/liste', name: 'Liste des Administrateurs', element: ListeAdmin },
+  //{ path: '/admin/creation', name: 'Création d\'une offre', element: creationAdmin },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },

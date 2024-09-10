@@ -35,6 +35,22 @@ const _nav = [
   },
   {
     component: CNavTitle,
+    name: 'Gestion des Administrateurs',
+  },
+  {
+    component: CNavItem,
+    name: 'Liste des Admins',
+    to: '/admin/liste',
+    icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavItem,
+    name: 'Création d\'un Admin',
+    to: '/admin/creation',
+    icon: <CIcon icon={cilPlus} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavTitle,
     name: 'Theme',
   },
   {

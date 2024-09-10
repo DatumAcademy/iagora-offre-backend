@@ -32,7 +32,7 @@ const App = () => {
   }, [])
 
   const isAuthenticated = () => {
-    return !!localStorage.getItem('JWTokken')
+    return !!localStorage.getItem('generateTokken')
   }
 
   return (
