@@ -5,6 +5,7 @@ const ListeOffre = React.lazy(() => import('./views/offres/liste/Liste'))
 const creationOffre = React.lazy(() => import('./views/offres/Add/Creation'))
 const detailOffre = React.lazy(() => import('./views/offres/Detail/Detail'))
 const statistique = React.lazy(() => import('./views/statistique/dashboard'))
+const RecommandationOffre = React.lazy(() => import('./views/offres/recommandation/index'))
 
 // Admin
 const ListeAdmin = React.lazy(() => import('./views/admin/liste/Liste'))
@@ -19,7 +20,8 @@ const routes = [
   { path: '/admin/liste', name: 'Liste des Administrateurs', element: ListeAdmin },
   { path: '/admin/creation', name: 'Création d\'un Administrateur', element: creationAdmin },
   { path: '/admin/detail/:id', name: 'A propos de l\'administrateur', element: detailAdmin },
-  { path: '/offre/statistique', name: 'Tableau de bord', element: statistique }
+  { path: '/offre/statistique', name: 'Tableau de bord', element: statistique },
+  { path: '/offre/recommendation', name: 'Recommandation', element: RecommandationOffre }
 ]
 
 export default routes

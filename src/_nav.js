@@ -59,6 +59,16 @@ const _nav = [
     name: 'Statistique',
     to: '/offre/statistique',
     icon: <CIcon icon={cilChart} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavTitle,
+    name: 'Recommandation des offres',
+  },
+  {
+    component: CNavItem,
+    name: 'Liste des offres',
+    to: '/offre/recommendation',
+    icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
   }
 ]
 
